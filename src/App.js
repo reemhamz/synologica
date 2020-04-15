@@ -20,7 +20,7 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                  synologica the moon
+                  Fly me to the moon
               
             <Search />
             
