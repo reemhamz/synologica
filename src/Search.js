@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./App.css";
+import "./styles/App.scss";
 import axios from "axios";
 
 const Search = () => {
@@ -57,7 +57,7 @@ return (
   <div>
     <div className="searchForm">
       
-      <form action="" onSubmit={handleSubmit}>
+      <form action="" onSubmit={handleSubmit} class="wrapper">
         <label htmlFor="searchBox">Search a word</label>
         <input type="text" id="searchBox" onChange={handleChange} />
         <input type="submit" value="Search me!" />

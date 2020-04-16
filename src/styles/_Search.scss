@@ -1,0 +1,26 @@
+.searchForm{
+    form{
+        height: 80vh;
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        input{
+            height: 40px;
+            margin: 20px 0;
+        }
+        input[type=submit]{
+            width: 150px;
+            margin: 0 auto;
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+            transition: 0.2s;
+            &:hover{
+                background-color: white;
+                color:#A33931;
+                border: 2px solid #1E4350;
+            }
+        }
+    }
+}

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import "./styles/App.scss";
 // import axios from 'axios';
 import Search from './Search';
 

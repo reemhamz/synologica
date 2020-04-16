@@ -1,0 +1,29 @@
+@import "./setup";
+@import url("https://fonts.googleapis.com/css2?family=Girassol&display=swap");
+@import "./colors";
+@import "./fonts";
+@import "./Search";
+
+
+body{
+background: #1D4350; 
+background: -webkit-linear-gradient(to right, #A43931, #1D4350); 
+background: linear-gradient(to right, #A43931, #1D4350); 
+
+}
+
+.wrapper{
+    max-width: 1280px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.App{
+    margin: 0 auto;
+    text-align: center;
+    font-family: 'Girassol', cursive;
+    h1{
+        font-size: 4rem;
+        color: white;
+    }
+}
