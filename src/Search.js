@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
 import axios from "axios";
-// import useForm from "react-hook-form"
 
 const Search = () => {
 
@@ -17,13 +16,15 @@ const Search = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
   // useState for submitting the form and getting a result
-  const [searchResult, setSearchResult] = useState("");
-  const [word, setWord] = useState("")
+    const [word, setWord] = useState("")
+    const [definitions, setDefinitions] = useState("")
+
+
   const handleSubmit = (e) => {
     const thesKey = "0bebbce6-ec99-40ee-8c2b-9f15a76caa72";
-    const dictKey = "aabc74eb-3a0d-48c2-aa09-f35372ef16b8";
     const apiURL = `https://www.dictionaryapi.com/api/v3/references/thesaurus/json/${searchTerm}?key=${thesKey}`;
-    e.preventDefault();
+      e.preventDefault();
+      
     axios({
       method: "GET",
       url: apiURL,
@@ -36,8 +37,17 @@ const Search = () => {
             setWord(wordInfo.hwi.hw)
 
             if (wordInfo.hwi.hw === searchTerm) {
-                console.log(wordInfo.meta.syns)
-                return wordInfo.meta.syns
+                const defsArray = wordInfo.shortdef;
+                // console.log(defsArray)
+                setDefinitions(defsArray)
+                
+                const syns = wordInfo.meta.syns;
+                syns.map(synWords => {
+                    synWords.map(wordsLol => {
+                        // console.log(def,wordsLol)
+                        
+                    })
+                })
             }
         })
     });
@@ -54,7 +64,7 @@ return (
       </form>
     </div>
         <div className="wordInfo">
-            {/* {word} */}
+          
         </div>
   </div>
 );

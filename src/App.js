@@ -19,13 +19,14 @@ class App extends Component {
   
     render() {
         return (
-            <div className="App">
-                  Fly me to the moon
+          <div className="App">
+            <h1>
               
+              <span role="img" aria-label="magnifying glass emoji">🔎</span> Synologica <span role="img" aria-label="open book emoji">📖</span> 
+            </h1>
+
             <Search />
-            
-            
-            </div>
+          </div>
         );
     }
 }
