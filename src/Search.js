@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./styles/App.scss";
 import axios from "axios";
+import { useCallback } from "react";
 
 const Search = () => {
 
@@ -17,10 +18,10 @@ const Search = () => {
 
   // useState for submitting the form and getting a result
     const [word, setWord] = useState("")
-    const [definitions, setDefinitions] = useState("")
+    const [definitions, setDefinitions] = useState([])
 
 
-  const handleSubmit = (e) => {
+  const handleSubmit = useCallback((e) => {
     const thesKey = "0bebbce6-ec99-40ee-8c2b-9f15a76caa72";
     const apiURL = `https://www.dictionaryapi.com/api/v3/references/thesaurus/json/${searchTerm}?key=${thesKey}`;
       e.preventDefault();
@@ -51,20 +52,22 @@ const Search = () => {
             }
         })
     });
-  };
+  },[searchTerm]);
 
 return (
   <div>
     <div className="searchForm">
       
-      <form action="" onSubmit={handleSubmit} class="wrapper">
+      <form action="" onSubmit={handleSubmit} className="wrapper">
         <label htmlFor="searchBox">Search a word</label>
         <input type="text" id="searchBox" onChange={handleChange} />
         <input type="submit" value="Search me!" />
       </form>
     </div>
         <div className="wordInfo">
-          
+            {definitions.map(test => {
+                console.log(test)
+            })}
         </div>
   </div>
 );
